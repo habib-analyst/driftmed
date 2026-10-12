@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "driftmed"
+version = "0.1.0"
+description = "Label-free accuracy-drop estimation for deployed medical imaging models"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Habib Ur Rehman"}]
+dependencies = ["numpy", "scipy", "scikit-learn", "torch"]
+keywords = ["drift-detection", "medical-imaging", "model-monitoring",
+            "distribution-shift", "dicom"]
+
+[project.urls]
+Homepage = "https://github.com/habib-analyst/driftmed"
+
+[tool.setuptools.packages.find]
+where = ["src"]

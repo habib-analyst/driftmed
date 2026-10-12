@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+checkpoints/
+data/
+*.npz
+*.pt
+TRAIN_DONE
+MATRIX_DONE
+PIPELINE_DONE
+logs*.txt

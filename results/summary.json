@@ -1,0 +1,62 @@
+{
+  "model": "SmallCNN (3-block, 64-d embeddings), BloodMNIST, 12 epochs CPU",
+  "model_val_acc": 0.7301,
+  "kill_gate_spearman_heldout": 0.9878,
+  "kill_gate_n": 10,
+  "kill_gate_threshold": 0.7,
+  "kill_gate_pass": true,
+  "per_family": {
+    "contrast": {
+      "spearman": 1.0,
+      "true_drop": [
+        0.184,
+        0.522,
+        0.5753,
+        0.582
+      ],
+      "est_drop": [
+        0.2578,
+        0.4955,
+        0.5707,
+        0.5767
+      ]
+    },
+    "cutout": {
+      "spearman": 1.0,
+      "true_drop": [
+        0.416,
+        0.478,
+        0.5567
+      ],
+      "est_drop": [
+        0.2994,
+        0.3837,
+        0.5529
+      ]
+    },
+    "rotation": {
+      "spearman": 0.0,
+      "note": "degenerate: true drops 0.0007-0.0053 (near-tied), estimates 0.0047 constant"
+    }
+  },
+  "ci_coverage_95_heldout": 0.1,
+  "ci_coverage_note": "CIs undercover on unseen families: bootstrap captures sampling noise, not cross-family mapping bias. Documented as limitation.",
+  "near_zero_drop_alerts": "0/3 rotation batches alerted (true drops 0.001-0.005, threshold 0.03)",
+  "false_alarm_rate_clean": null,
+  "false_alarm_note": "Not measured: compute contention (process reaper) killed all estimate_ci jobs in the final window. Predicted ~0 from clean-batch point estimates (~0.002 << 0.03 threshold). To be measured on rerun.",
+  "metadata_same_site_combined": 0.0115,
+  "metadata_scanner_swap_scanner_psi": 6.9853,
+  "metadata_scanner_swap_combined": 1.4083,
+  "canary_rows": 12,
+  "canary_families": [
+    "gaussian_noise",
+    "blur",
+    "brightness"
+  ],
+  "heldout_families": [
+    "contrast",
+    "rotation",
+    "cutout"
+  ],
+  "tests": "18/18 pass"
+}
